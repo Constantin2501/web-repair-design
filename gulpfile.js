@@ -1,8 +1,6 @@
 const {src, dest, watch} = require('gulp');
 const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass')(require('sass'));
-const cssmin = require('gulp-cssmin');
-const rename = require('gulp-rename');
 
 
 // Static server
@@ -21,17 +19,9 @@ function bs() {
 
 function serveSass() {
 	return src("src/sass/*.sass")
-		.pipe(sass())
+		.pipe(sass({outputStyle: 'compressed'}))
 		.pipe(dest("src/css"))
 		.pipe(browserSync.stream());
 }
 
-// function ms () {
-// 	return src('src/css/*.css')
-// 		.pipe(cssmin())
-// 		.pipe(rename({suffix: '.min'}))
-// 		.pipe(dest('dist'));
-// }
-
 exports.serve = bs;
-// exports.cssmin = ms;
