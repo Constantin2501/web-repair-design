@@ -8,10 +8,23 @@ document.addEventListener('DOMContentLoaded', () => {
 		modal.classList.toggle('modal--visible');
 	}
 
+	const closeModalEcs = (e) => {
+		if (e.key === 'Escape' && modal.classList.contains('modal--visible')) {
+			switchModal()
+		}
+	}
+
+	const closeModalOnClickOutside = (e) => {
+		if (e.target === modal) {
+			switchModal()
+		}
+	}
+
 	modalBtn.forEach(btn => {
 		btn.addEventListener('click', switchModal);
 	})
 
 	closeBtn.addEventListener('click', switchModal);
-
+	document.addEventListener('keydown', closeModalEcs);
+	modal.addEventListener('click', closeModalOnClickOutside);
 })
