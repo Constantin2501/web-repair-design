@@ -10,8 +10,7 @@ function bs() {
 	browserSync.init({
 		server: {
 			baseDir: "./src"
-		},
-		browser: "firefox"
+		}
 	});
 	watch("src/*.html").on('change', browserSync.reload);
 	watch("src/sass/**/*.sass", serveSass);
