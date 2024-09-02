@@ -34,7 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
 $(function(){
 	const modal = $('.modal'),
 				modalBtn = $('[data-toggle=modal]'),
-				closeBtn = $('.modal__close');
+				closeBtn = $('.modal__close'),
+				backUpButton = $('.back-to-up').hide(),
+				backUpLink = $('.back-to-up__link');
 
 
 	const switchModal = () => {
@@ -53,7 +55,20 @@ $(function(){
 		}
 	}
 
+	$(window).on('scroll', () => {
+		const scroll = $(window).scrollTop();
 
+		if (scroll > 500) {
+			backUpButton.fadeIn()
+		} else {
+			backUpButton.fadeOut()
+		}
+	});
+
+	backUpLink.on('click', (e) => {
+		e.preventDefault();
+		$('html, body').animate({scrollTop: 0}, 500);
+	})
 
 	modalBtn.on('click', switchModal);
 	closeBtn.on('click', switchModal);
