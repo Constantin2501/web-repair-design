@@ -38,6 +38,27 @@ $(function(){
 				backUpButton = $('.back-to-up').hide(),
 				backUpLink = $('.back-to-up__link');
 
+	const swiper = new Swiper('.swiper', {
+		loop: true,
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'bullets',
+		},
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	})
+
+
+
+	$('.slide-target__card').on('click', function() {
+		const slideIndex = $(this).data('slide');
+
+
+		$('.slide-target__card').removeClass('slide-target__card--active');
+		$(this).addClass('slide-target__card--active');
+	})
 
 	const switchModal = () => {
 		modal.toggleClass('modal--visible');
@@ -70,25 +91,19 @@ $(function(){
 		$('html, body').animate({scrollTop: 0}, 500);
 	})
 
+	var next1 = $('.slider-1 .swiper-button-next');
+	var prev1 = $('.slider-1 .swiper-button-prev');
+	var bullets1 = $('.slider-1 .swiper-pagination');
 
-	var mySwiper = new Swiper('.swiper', {
-		loop: true,
-		pagination: {
-			el: '.swiper-pagination',
-			type: 'bullets',
-		},
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-	})
+	next1.css('left', prev1.width() + 10 + bullets1.width()+ 10)
+	bullets1.css('left', prev1.width() + 10)
 
-	var next = $('.swiper-button-next');
-	var prev = $('.swiper-button-prev');
-	var bullets = $('.swiper-pagination');
+	var next2 = $('.slider-2 .swiper-button-next');
+	var prev2 = $('.slider-2 .swiper-button-prev');
+	var bullets2 = $('.slider-2 .swiper-pagination');
 
-	next.css('left', prev.width() + 10 + bullets.width()+ 10)
-	bullets.css('left', prev.width() + 10)
+	next2.css('left', prev2.width() + 10 + bullets2.width()+ 10)
+	bullets2.css('left', prev2.width() + 10)
 
 
 	modalBtn.on('click', switchModal);
@@ -96,3 +111,5 @@ $(function(){
 	document.onkeydown = closeModalEcs;
 	modal.on('click', closeModalOnClickOutside);
 });
+
+
