@@ -144,6 +144,8 @@ $(function(){
 		}
 	});
 
+	$('.slide-target__card').first().addClass('slide-target__card--active');
+
 	modalBtn.on('click', switchModal);
 	closeBtn.on('click', switchModal);
 	document.onkeydown = closeModalEcs;
