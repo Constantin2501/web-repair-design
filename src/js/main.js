@@ -38,27 +38,6 @@ $(function(){
 				backUpButton = $('.back-to-up').hide(),
 				backUpLink = $('.back-to-up__link');
 
-	const swiper = new Swiper('.swiper', {
-		loop: true,
-		pagination: {
-			el: '.swiper-pagination',
-			type: 'bullets',
-		},
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-	})
-
-
-
-	$('.slide-target__card').on('click', function() {
-		const slideIndex = $(this).data('slide');
-
-
-		$('.slide-target__card').removeClass('slide-target__card--active');
-		$(this).addClass('slide-target__card--active');
-	})
 
 	const switchModal = () => {
 		modal.toggleClass('modal--visible');
@@ -91,12 +70,36 @@ $(function(){
 		$('html, body').animate({scrollTop: 0}, 500);
 	})
 
+	var swiper = new Swiper('.slider-1', {
+		loop: true,
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'bullets',
+		},
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	})
+
 	var next1 = $('.slider-1 .swiper-button-next');
 	var prev1 = $('.slider-1 .swiper-button-prev');
 	var bullets1 = $('.slider-1 .swiper-pagination');
 
 	next1.css('left', prev1.width() + 10 + bullets1.width()+ 10)
 	bullets1.css('left', prev1.width() + 10)
+
+	var swiper2 = new Swiper('.slider-2', {
+		loop: true,
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'bullets',
+		},
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	})
 
 	var next2 = $('.slider-2 .swiper-button-next');
 	var prev2 = $('.slider-2 .swiper-button-prev');
@@ -105,6 +108,41 @@ $(function(){
 	next2.css('left', prev2.width() + 10 + bullets2.width()+ 10)
 	bullets2.css('left', prev2.width() + 10)
 
+	$('.slide-target__card').on('click', function() {
+		const slideIndex = $(this).data('slide');// Проверка значения slideIndex
+
+		// Переключаем слайд на указанный индекс
+		swiper2.slideTo(slideIndex);
+
+		$('.slide-target__card').removeClass('slide-target__card--active');
+		$(this).addClass('slide-target__card--active');
+	});
+
+	var swiper3 = new Swiper('.slider-3', {
+		loop: true,
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'bullets',
+		},
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	})
+
+	$('.slide-target__card').on('click', function () {
+		var slideIndex = $(this).data('slide'); // Получаем индекс слайда из атрибута data-slide
+
+		if (!isNaN(slideIndex)) {  // Проверяем, что slideIndex — это число
+			// Переключаем слайд на указанный индекс для обоих слайдеров
+			swiper2.slideTo(slideIndex);
+			swiper3.slideTo(slideIndex);
+
+			// Обновляем активный класс у всех переключателей
+			$('.slide-target__card').removeClass('slide-target__card--active');
+			$(this).addClass('slide-target__card--active');
+		}
+	});
 
 	modalBtn.on('click', switchModal);
 	closeBtn.on('click', switchModal);
