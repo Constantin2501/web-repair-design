@@ -146,10 +146,35 @@ $(function(){
 
 	$('.slide-target__card').first().addClass('slide-target__card--active');
 
+	function handleIntersection(entries, observer) {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				// Запускаем анимацию, если элемент виден
+				$(entry.target).css('animation-play-state', 'running');
+				observer.unobserve(entry.target); // Останавливаем наблюдение за элементом
+			}
+		});
+	}
+
+	// Настройки Intersection Observer
+	let observerOptions = {
+		threshold: 0.1 // Сработает, когда хотя бы 10% элемента будет видно
+	};
+
+	// Создаем новый Intersection Observer
+	let observer = new IntersectionObserver(handleIntersection, observerOptions);
+
+	// Наблюдаем за всеми элементами с атрибутом data-animate
+	$('[data-animate]').each(function() {
+		observer.observe(this);
+	});
+
 	modalBtn.on('click', switchModal);
 	closeBtn.on('click', switchModal);
 	document.onkeydown = closeModalEcs;
 	modal.on('click', closeModalOnClickOutside);
+
+	new WOW().init();
 });
 
 

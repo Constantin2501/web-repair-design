@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link rel="stylesheet" href="css/style.css">
   <title>Repair Design</title>
 </head>
@@ -38,10 +39,10 @@
       </div>
       <div class="container">
         <div class="hero__content">
-          <h1 class="title hero__title">Турецкий ремонт в&nbsp;<span class="title--primary">Ростове-на-дону</span></h1>
-          <p class="hero__text">Получите готовый ремонт под ключ в срок с экономией рабочего времени до 45 дней и 20% от стоимости материалов за счет организации работы</p>
-          <button class="button hero__button button--primary" data-toggle="modal">Рассчитать стоимость</button>
-          <button class="button hero__button button--outline">Отправить заявку</button>
+          <h1 class="title hero__title wow animate__animated animate__fadeInLeft" data-wow-delay="0.1s">Турецкий ремонт в&nbsp;<span class="title--primary">Ростове-на-дону</span></h1>
+          <p class="hero__text wow animate__animated animate__fadeInLeft" data-wow-delay="0.3s">Получите готовый ремонт под ключ в срок с экономией рабочего времени до 45 дней и 20% от стоимости материалов за счет организации работы</p>
+          <button class="button hero__button button--primary wow animate__animated animate__fadeInLeft" data-wow-delay="0.5s" data-toggle="modal">Рассчитать стоимость</button>
+          <button class="button hero__button button--outline wow animate__animated animate__fadeInLeft" data-wow-delay="0.5s">Отправить заявку</button>
         </div>
         <!-- /.hero__content -->
       </div>
@@ -327,7 +328,7 @@
     <section class="section design">
       <div class="container">
         <div class="section-title design__section-title">
-          <h2 class="section-title__heading">Дизайн проект</h2>
+          <h2 class="section-title__heading design-title__heading" data-animate>Дизайн проект</h2>
           <!-- /.section-title__heading -->
           <div class="section-title__image">
             <img src="img/design/design.svg" alt="design">
@@ -631,6 +632,7 @@
   <!-- /.modal -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/wow.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
