@@ -179,6 +179,7 @@ $(function(){
 			userName: {
 				required: true,
 				minlength: 2,
+				maxlength: 15,
 			},
 			userPhone: "required",
 			// правило-объект (блок)
@@ -186,17 +187,66 @@ $(function(){
 				required: true,
 				email: true
 			}
-		}, // сообщения
+		},
+		errorElement: "div",
+		// сообщения
 		messages: {
 			userName: {
-				required: "Имя обязательно",
+				required: "Заполните поле",
 				minlength: "Имя не короче двух букв",
+				maxlength: "Имя не больше пятнадцати букв",
 			},
-			userPhone: "Телефон обязателен",
+			userPhone: "Заполните поле",
 			userEmail: {
-				required: "Обязательно укажите email",
-				email: "Введите в формате: name@domain.com"
+				required: "Заполните поле",
+				email: "Введите корректный email"
 			}
+		}
+	})
+
+	$('.control__form').validate({
+		errorClass: "invalid",
+		rules: {
+			// строчное правило
+			userName: {
+				required: true,
+				minlength: 2,
+				maxlength: 15,
+			},
+			userPhone: "required"
+		},
+		errorElement: "div",
+		// сообщения
+		messages: {
+			userName: {
+				required: "Заполните поле",
+				minlength: "Имя не короче двух букв",
+				maxlength: "Имя не больше пятнадцати букв",
+			},
+			userPhone: "Заполните поле",
+		}
+	})
+
+	$('.footer__form').validate({
+		errorClass: "invalid",
+		rules: {
+			// строчное правило
+			userName: {
+				required: true,
+				minlength: 2,
+				maxlength: 15,
+			},
+			userPhone: "required"
+		},
+		errorElement: "div",
+		// сообщения
+		messages: {
+			userName: {
+				required: "Заполните поле",
+				minlength: "Имя не короче двух букв",
+				maxlength: "Имя не больше пятнадцати букв",
+			},
+			userPhone: "Заполните поле",
 		}
 	})
 

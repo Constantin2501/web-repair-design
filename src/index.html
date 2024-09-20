@@ -185,12 +185,12 @@
         <form action="#" class="form control__form">
           <div class="control__input-group">
             <label for="user-name" class="label form__label">Имя</label>
-            <input type="text" class="input form__input control__input" id="user-name" placeholder="Как вас зовут:">
+            <input type="text" name="userName" class="input form__input control__input" id="user-name" placeholder="Как вас зовут:">
           </div>
 
           <div class="control__input-group">
             <label for="user-phone" class="label form__label control__label">Телефон</label>
-            <input type="tel" class="input form__input control__input" id="user-phone" placeholder="Ваш номер телефона:">
+            <input type="tel" name="userPhone" class="input form__input control__input" id="user-phone" placeholder="Ваш номер телефона:">
           </div>
 
           <button class="button button--primary control__button">Отправить</button>
@@ -600,6 +600,48 @@
       </div>
     </section>
     <!-- /.section step -->
+    <section class="section team">
+      <div class="container">
+        <div class="section-title team__section-title section-title--light">
+          <h2 class="section-title__heading">
+            Наша команда
+          </h2>
+          <!-- /.section-title__heading -->
+          <div class="section-title__image">
+            <img src="img/team/team-title.svg" alt="team">
+          </div>
+          <!-- /.section-title__image -->
+          <p class="section-title__text team__title-text">
+            Наша команда помогла стать счастливее более чем 500 семьям, и мы не собираемся останавливаться
+          </p>
+          <!-- /.section-title__text -->
+        </div>
+        <!-- /.section-title -->
+        <div class="row">
+          <div class="col-30">
+            <div class="team__card">
+              <div class="team__card-image-wrap">
+                <img class="team__card-image" src="img/team/team-image-1.jpg" alt="photo">
+              </div>
+              <div class="team__card-text">
+                <h3 class="team__card-title">Алексей Колмаков</h3>
+                <!--     обертку сдлать для  спан           -->
+                <span class="team__card-subtitle">Проектный менеджер</span>
+                <strong class="team__card-tag">Опыт работы 8 лет</strong>
+              </div>
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col-30 -->
+          <div class="col-30"></div>
+          <!-- /.col-30 -->
+          <div class="col-30"></div>
+          <!-- /.col-30 -->
+        </div>
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.section team -->
   </main>
   <footer class="footer section--dark">
     <div class="container">
@@ -608,11 +650,11 @@
         <form action="#" class="form footer__form">
           <div class="input-group footer__input-group">
             <label for="user-name" class="label form__label label--light">Имя</label>
-            <input type="text" class="input form__input footer__input input--light" id="user-name" placeholder="Как вас зовут:">
+            <input type="text" name="userName" class="input form__input footer__input input--light" id="user-name" placeholder="Как вас зовут:">
           </div>
           <div class="input-group footer__input-group">
             <label for="user-phone" class="label form__label label--light">Телефон</label>
-            <input type="tel" class="input form__input footer__input input--light" id="user-phone" placeholder="Ваш номер телефона:">
+            <input type="tel" name="userPhone" class="input form__input footer__input input--light" id="user-phone" placeholder="Ваш номер телефона:">
           </div>
           <div class="input-group footer__input-group footer__input-group--full-width">
             <label for="user-question" class="label form__label label--light">Вопрос</label>
